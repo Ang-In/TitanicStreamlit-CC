@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from fastai.vision.all import *
 
-survivalModel = load_learner("titanicSurvialPredictor.pkl")
+survivalModel = load_learner("titanicSurvivalPredictor.pkl")
 
 '''def take_inputs():
     #name = input("What is your name? ")
@@ -29,3 +29,9 @@ survivalModel = load_learner("titanicSurvialPredictor.pkl")
 
 st.title("Survival Predictor: Will You Survive the Titanic?")
 st.text("Built by Crystal")
+
+name = st.text_input("What is your name? ")
+age = st.number_input("How old are you? ", min_value=1, max_value=100, step=1)
+gender = st.selectbox("Select your gender: ", ("male", "female"))
+#fare = float(input("Enter your ticket price: "))
+#sibSp = int(input("How many people are in your party? "))
